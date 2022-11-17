@@ -1,35 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PlayView from "./components/PlayView";
+import WelcomeView from "./components/WelcomeView";
+import useFoxGame from "./hooks/useFoxGame"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
-    const [nameState, setNameState] = useState("");
-    
-    const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const enteredName = event.target.value;
-        setNameState(enteredName);
-    };
+    const [nameState, setNameState, started, setStarted, startGame, endGame, timeRemaining, timeIsRunning, animalState, setAnimalState] = useFoxGame()
+    const animals = [...animalState];
 
     return (
-        <div className="bg-zinc-800 h-screen w-screen">
-            <div className="w-2/3 max-w-3xl mx-auto h-full text-white text-center">
-                <h1 className="text-3xl pt-10" > Click the Fox! Game</h1>
-                <form className="mt-4">
-                    <label id="name" className="">
-                        Name:
-                        <input
-                            className="text-black w-36 rounded px-1 m-4"
-                            type="text"
-                            name="name"
-                            id="name"
-                            placeholder="Name"
-                            value={nameState}
-                            onChange={inputHandler}
-                        />
-                        <button type="submit" className="py-2 px-3 rounded border">submit</button>
-                    </label>
-                </form>
-            </div>
+        <div className="bg-zinc-500 h-screen w-screen flex items-center justify-center">
+            <Routes>
+                <Route
+                    path="/play"
+                    element={<PlayView animals={animals} />}
+                />
+                <Route
+                    path="/"
+                    element={<WelcomeView />}
+                />
+            </Routes>
         </div>
     );
 }
