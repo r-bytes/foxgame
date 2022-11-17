@@ -43,6 +43,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+About React here:
+[React documentation](https://reactjs.org/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+About TypeScript here:
+For TypeScript, check out [TypeScript documentation](https://www.typescriptlang.org/docs/)
+
+About TailwindCSS here:
+[TailwindCSS documentation](https://tailwindcss.com/docs/installation)
