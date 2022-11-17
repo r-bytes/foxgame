@@ -2,7 +2,25 @@ import useFoxGame from "../hooks/useFoxGame";
 import { useNavigate } from 'react-router-dom'
 
 const WelcomeView = () => {
-    const [nameState, setNameState, started, setStarted, startGame, endGame, timeRemaining, timeIsRunning, animalState, setAnimalState] = useFoxGame()
+    const [
+        nameState,
+        setNameState,
+        started,
+        setStarted,
+        startGame,
+        endGame,
+        timeRemaining,
+        timeIsRunning,
+        animalState,
+        setAnimalState,
+        userClick,
+        setUserClick,
+        shuffleArray,
+        handleClick,
+        isLoading,
+        setIsLoading
+    ] = useFoxGame()
+    
     const navigateTo = useNavigate()
 
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -4,7 +4,24 @@ import useFoxGame from "../hooks/useFoxGame"
 import { AnimalProps } from "../../typings";
 
 const AnimalGrid = ({ animals }: AnimalProps) => {
-    const [nameState, setNameState, started, setStarted, startGame, endGame, timeRemaining, timeIsRunning, animalState, setAnimalState, userClick, setUserClick, shuffleArray, handleClick, isLoading, setIsLoading] = useFoxGame()
+    const [
+        nameState,
+        setNameState,
+        started,
+        setStarted,
+        startGame,
+        endGame,
+        timeRemaining,
+        timeIsRunning,
+        animalState,
+        setAnimalState,
+        userClick,
+        setUserClick,
+        shuffleArray,
+        handleClick,
+        isLoading,
+        setIsLoading
+    ] = useFoxGame()
     
     const animalArr = animals.map(animal => (
         <img

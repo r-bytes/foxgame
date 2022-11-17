@@ -6,7 +6,25 @@ import Loading from "./Loading";
 import { useStateContext } from "../context/StateProvider";
 
 const PlayView = ({ animals }: AnimalProps) => {
-    const [nameState, setNameState, started, setStarted, startGame, endGame, timeRemaining, timeIsRunning, animalState, setAnimalState, userClick, setUserClick, shuffleArray, handleClick, isLoading, setIsLoading] = useFoxGame()
+    const [
+        nameState,
+        setNameState,
+        started,
+        setStarted,
+        startGame,
+        endGame,
+        timeRemaining,
+        timeIsRunning,
+        animalState,
+        setAnimalState,
+        userClick,
+        setUserClick,
+        shuffleArray,
+        handleClick,
+        isLoading,
+        setIsLoading
+    ] = useFoxGame()
+    
     const { score } = useStateContext()
 
     useEffect(() => {

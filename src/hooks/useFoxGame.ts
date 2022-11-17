@@ -3,13 +3,14 @@ import { useStateContext } from "../context/StateProvider";
 import { Animal } from "../../typings"
 
 export default function useFoxGame(startingTime = 30){
-    const [nameState, setNameState] = useState("");
-    const [started, setStarted] = useState(false)
-    const [timeRemaining, setTimeRemaining] = useState(startingTime);
-    const [timeIsRunning, setTimeIsRunning] = useState(false);
-    const [userClick, setUserClick] = useState(false)
+    const [nameState, setNameState] = useState<string>("");
+    const [started, setStarted] = useState<boolean>(false)
+    const [timeRemaining, setTimeRemaining] = useState<number>(startingTime);
+    const [timeIsRunning, setTimeIsRunning] = useState<boolean>(false);
+    const [userClick, setUserClick] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    
     const { score, setScore } = useStateContext()
-    const [isLoading, setIsLoading] = useState(false)
     
     const shuffleArray = (arr: Animal[]) => {
         //shuffle logic here
@@ -21,10 +22,9 @@ export default function useFoxGame(startingTime = 30){
     }
     
     const handleClick = (e: any) => {
-        
-        setUserClick(prev => !prev)
         setIsLoading(true)
 
+        // wait 1 seconds
         setTimeout(() => {
             setIsLoading(false)
         }, 1000);
@@ -36,7 +36,6 @@ export default function useFoxGame(startingTime = 30){
         } else {
             setScore((prev: number) => prev - 1)
         }
-        console.log(animalState);
     }
     
     const [animalState, setAnimalState] = useState([
@@ -121,5 +120,22 @@ export default function useFoxGame(startingTime = 30){
         }, 1000)
     }, [timeRemaining, timeIsRunning])
 
-    return [nameState, setNameState, started, setStarted, startGame, endGame, timeRemaining, timeIsRunning, animalState, setAnimalState, userClick, setUserClick, shuffleArray, handleClick, isLoading, setIsLoading] as const
+    return [
+        nameState,
+        setNameState,
+        started,
+        setStarted,
+        startGame,
+        endGame,
+        timeRemaining,
+        timeIsRunning,
+        animalState,
+        setAnimalState,
+        userClick,
+        setUserClick,
+        shuffleArray,
+        handleClick,
+        isLoading,
+        setIsLoading
+    ] as const
 }
