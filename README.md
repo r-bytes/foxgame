@@ -43,11 +43,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-About React here:
+About React here:\
 [React documentation](https://reactjs.org/).
 
-About TypeScript here:
-For TypeScript, check out [TypeScript documentation](https://www.typescriptlang.org/docs/)
+About TypeScript here:\
+[TypeScript documentation](https://www.typescriptlang.org/docs/)
 
-About TailwindCSS here:
+About TailwindCSS here:\
 [TailwindCSS documentation](https://tailwindcss.com/docs/installation)
