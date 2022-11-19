@@ -10,7 +10,7 @@ export default function useFoxGame(startingTime = 30){
     const [userClick, setUserClick] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     
-    const { score, setScore } = useStateContext()
+    const { score, addScore, subScore } = useStateContext()
     
     const shuffleArray = (arr: Animal[]) => {
         //shuffle logic here
@@ -32,9 +32,11 @@ export default function useFoxGame(startingTime = 30){
         // set score based on cicked image
         const clickedCharacter = e.target.alt.slice(0, e.target.alt.length - 1)
         if(clickedCharacter === "fox") {
-            setScore((prev: number) => prev + 1)
+            // setScore((prev: number) => prev + 1)
+            addScore()
         } else {
-            setScore((prev: number) => prev - 1)
+            // setScore((prev: number) => prev - 1)
+            subScore()
         }
     }
     
@@ -100,8 +102,7 @@ export default function useFoxGame(startingTime = 30){
         setStarted(true)
         setTimeIsRunning(true)
         setTimeRemaining(startingTime)
-    }
-    
+    } 
     
     const endGame = () => {
 
