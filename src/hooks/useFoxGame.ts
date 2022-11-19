@@ -3,7 +3,7 @@ import { useStateContext } from "../context/StateProvider";
 import { Animal } from "../../typings";
 import { useNavigate } from "react-router-dom";
 
-export default function useFoxGame(startingTime = 10) {
+export default function useFoxGame(startingTime = 30) {
   const [started, setStarted] = useState<boolean>(false);
   const [timeRemaining, setTimeRemaining] = useState<number>(startingTime);
   const [timeIsRunning, setTimeIsRunning] = useState<boolean>(false);
