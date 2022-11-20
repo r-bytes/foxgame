@@ -31,11 +31,10 @@ export default function useFoxGame(startingTime = 30) {
       setIsLoading(false);
     }, 500);
 
+    
     // get clicked target
-    const clickedCharacter = e.currentTarget.attributes[2].nodeValue?.slice(
-      0,
-      e.currentTarget.attributes[2].nodeValue?.length - 1
-    );
+    const clickedCharacter = e.currentTarget.attributes[4].nodeValue?.slice(0,e.currentTarget.attributes[4].nodeValue?.length - 1);
+    // console.log("clickedCharacter", clickedCharacter)
 
     // calculate score based on cicked image
     if (clickedCharacter === "fox") {
