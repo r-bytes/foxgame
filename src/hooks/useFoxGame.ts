@@ -23,7 +23,7 @@ export default function useFoxGame(startingTime = 30) {
     return arr;
   };
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     setIsLoading(true);
 
     // wait 1 seconds
@@ -31,10 +31,9 @@ export default function useFoxGame(startingTime = 30) {
       setIsLoading(false);
     }, 500);
 
-    
     // get clicked target
-    const clickedCharacter = e.currentTarget.attributes[4].nodeValue?.slice(0,e.currentTarget.attributes[4].nodeValue?.length - 1);
-    // console.log("clickedCharacter", clickedCharacter)
+    const clickedCharacter = e.currentTarget.alt.slice(0, e.currentTarget.alt.length - 1);
+    console.log("clickedCharacter", clickedCharacter)
 
     // calculate score based on cicked image
     if (clickedCharacter === "fox") {
